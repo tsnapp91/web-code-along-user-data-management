@@ -1,5 +1,3 @@
-// lesson 2
-// step 1-2
 export const sortByEmail = (arr) => {
     const newArr = [...arr];
     const sorter = newArr.sort((a, b) => {
@@ -86,8 +84,7 @@ export const sortByState = (arr) => {
     return sorter;
 }
 
-// step 3
-// need to fix up the extra logic for strings
+// need to fix up the extra logic for specific keys
 export const sortByKey = (arr, key) => {
     const newArr = [...arr];
     const sorter = newArr.sort((a, b) => {

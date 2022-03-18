@@ -1,4 +1,3 @@
-// lesson 1
 export const cleanupUndefinedKeys = async (arr) => {
     const returnArr = [];
     

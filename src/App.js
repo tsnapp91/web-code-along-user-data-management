@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 import _uglyData from "./utils/uglify";
 import { cleanupUndefinedKeys, cleanDates } from "./utils/data-clean";
@@ -110,7 +110,7 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <div>
       <h1>List of Users</h1>
 
       <div>
@@ -119,7 +119,7 @@ function App() {
         })}
       </div>
 
-      {/* lesson 1 */}
+      {/* comment in buttons as the associated function is worked on */}
       <div>
         <button onClick={() => keyCleaner([...uglyData])}>
           Clean undefined and empty string values
@@ -129,8 +129,6 @@ function App() {
         </button>
       </div>
 
-      {/* lesson 2 */}
-      {/* step 1 */}
       <div>
         <button onClick={() => sortEmail([...uglyData])}>
           Sort data by email
@@ -149,8 +147,7 @@ function App() {
         </button>
       </div>
 
-      {/* step 2 */}
-      {/* <div>
+      <div>
         <button onClick={() => sorter([...uglyData], 'email')}>
           Sort data by email
         </button>
@@ -166,10 +163,9 @@ function App() {
         <button onClick={() => sorter([...uglyData], 'state')}>
           Sort data by state
         </button>
-      </div> */}
+      </div>
 
-      {/* step 3 */}
-      {/* <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <select value={optionsState} onChange={handleSelectChange}>
           <option value=""></option>
           <option value="email">email</option>
@@ -179,8 +175,8 @@ function App() {
           <option value="state">state</option>
         </select>
         <button type="submit">Sort</button>
-      </form> */}
-    </Fragment>
+      </form>
+    </div>
   );
 }
 
