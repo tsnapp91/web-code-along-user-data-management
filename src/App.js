@@ -4,11 +4,11 @@ import _uglyData from "./utils/uglify";
 import { cleanupUndefinedKeys, cleanDates } from "./utils/data-clean";
 import {
   sortByKey,
-  sortByEmail,
-  sortByUsername,
-  sortByLastName,
-  sortByDOB,
-  sortByState,
+  // sortByEmail,
+  // sortByUsername,
+  // sortByLastName,
+  // sortByDOB,
+  // sortByState,
 } from "./utils/sorting";
 
 import User from "./components/User";
@@ -18,6 +18,10 @@ import "./styles/App.css";
 function App() {
   const [uglyData, setUglyData] = useState(_uglyData);
   const [optionsState, setOptionsState] = useState("");
+
+  const rtt = () => {
+    document.documentElement.scrollTop = 0;
+  }
 
   const keyCleaner = async (arr) => {
     const newData = await cleanupUndefinedKeys(arr);
@@ -32,65 +36,65 @@ function App() {
   };
 
   // step 1
-  const sortEmail = (arr) => {
-    const newData = sortByEmail(arr);
-    setUglyData(newData);
-    return newData;
-  };
+  // const sortEmail = (arr) => {
+  //   const newData = sortByEmail(arr);
+  //   setUglyData(newData);
+  //   return newData;
+  // };
 
-  const sortUsername = (arr) => {
-    const newData = sortByUsername(arr);
-    setUglyData(newData);
-    return newData;
-  };
+  // const sortUsername = (arr) => {
+  //   const newData = sortByUsername(arr);
+  //   setUglyData(newData);
+  //   return newData;
+  // };
 
-  const sortLastName = (arr) => {
-    const newData = sortByLastName(arr);
-    setUglyData(newData);
-    return newData;
-  };
+  // const sortLastName = (arr) => {
+  //   const newData = sortByLastName(arr);
+  //   setUglyData(newData);
+  //   return newData;
+  // };
 
-  const sortDOB = (arr) => {
-    const newData = sortByDOB(arr);
-    setUglyData(newData);
-    return newData;
-  };
+  // const sortDOB = (arr) => {
+  //   const newData = sortByDOB(arr);
+  //   setUglyData(newData);
+  //   return newData;
+  // };
 
-  const sortState = (arr) => {
-    const newData = sortByState(arr);
-    setUglyData(newData);
-    return newData;
-  };
+  // const sortState = (arr) => {
+  //   const newData = sortByState(arr);
+  //   setUglyData(newData);
+  //   return newData;
+  // };
 
   // step 2
-  const sorter = (arr, type) => {
-    let newData;
-    switch (type) {
-      case "email":
-        newData = sortByEmail(arr);
-        setUglyData(newData);
-        break;
-      case "username":
-        newData = sortByUsername(arr);
-        setUglyData(newData);
-        break;
-      case "lastName":
-        newData = sortByLastName(arr);
-        setUglyData(newData);
-        break;
-      case "dob":
-        sortByDOB(arr);
-        setUglyData(newData);
-        break;
-      case "state":
-        sortByState(arr);
-        setUglyData(newData);
-        break;
-      default:
-        break;
-    }
-    return newData;
-  };
+  // const sorter = (arr, type) => {
+  //   let newData;
+  //   switch (type) {
+  //     case "email":
+  //       newData = sortByEmail(arr);
+  //       setUglyData(newData);
+  //       break;
+  //     case "username":
+  //       newData = sortByUsername(arr);
+  //       setUglyData(newData);
+  //       break;
+  //     case "lastName":
+  //       newData = sortByLastName(arr);
+  //       setUglyData(newData);
+  //       break;
+  //     case "dob":
+  //       sortByDOB(arr);
+  //       setUglyData(newData);
+  //       break;
+  //     case "state":
+  //       sortByState(arr);
+  //       setUglyData(newData);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  //   return newData;
+  // };
 
   // step 3
   const sortGeneric = (arr, key) => {
@@ -110,26 +114,33 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>List of Users</h1>
 
-      <div>
-        {uglyData.map((user) => {
-          return <User key={user.id} user={user} />;
-        })}
-      </div>
-
       {/* comment in buttons as the associated function is worked on */}
-      <div>
+      <div className="button-container">
         <button onClick={() => keyCleaner([...uglyData])}>
-          Clean undefined and empty string values
+          Clean unformatted string values
         </button>
+
         <button onClick={() => dateCleaner([...uglyData])}>
           Fix date values
         </button>
-      </div>
 
-      <div>
+        <form onSubmit={onSubmit}>
+          <select value={optionsState} onChange={handleSelectChange}>
+            <option value=""></option>
+            <option value="email">email</option>
+            <option value="username">username</option>
+            <option value="lastName">last name</option>
+            <option value="dob">date of birth</option>
+            <option value="state">state</option>
+          </select>
+          <button type="submit">Sort</button>
+        </form>
+      </div>
+{/* 
+      <div className="button-container">
         <button onClick={() => sortEmail([...uglyData])}>
           Sort data by email
         </button>
@@ -140,14 +151,14 @@ function App() {
           Sort data by last name
         </button>
         <button onClick={() => sortDOB([...uglyData])}>
-          Sort data by date of birth
+          Sort data by dob
         </button>
         <button onClick={() => sortState([...uglyData])}>
           Sort data by state
         </button>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div className="button-container">
         <button onClick={() => sorter([...uglyData], 'email')}>
           Sort data by email
         </button>
@@ -158,24 +169,38 @@ function App() {
           Sort data by last name
         </button>
         <button onClick={() => sorter([...uglyData], 'dob')}>
-          Sort data by date of birth
+          Sort data by dob
         </button>
         <button onClick={() => sorter([...uglyData], 'state')}>
           Sort data by state
         </button>
+      </div> */}
+
+      <div className="button-container">
+        <button onClick={() => sortGeneric([...uglyData], 'email')}>
+          Sort data by email
+        </button>
+        <button onClick={() => sortGeneric([...uglyData], 'username')}>
+          Sort data by username
+        </button>
+        <button onClick={() => sortGeneric([...uglyData], 'lastName')}>
+          Sort data by last name
+        </button>
+        <button onClick={() => sortGeneric([...uglyData], 'dob')}>
+          Sort data by dob
+        </button>
+        <button onClick={() => sortGeneric([...uglyData], 'state')}>
+          Sort data by state
+        </button>
       </div>
 
-      <form onSubmit={onSubmit}>
-        <select value={optionsState} onChange={handleSelectChange}>
-          <option value=""></option>
-          <option value="email">email</option>
-          <option value="username">username</option>
-          <option value="lastName">last name</option>
-          <option value="dob">date of birth</option>
-          <option value="state">state</option>
-        </select>
-        <button type="submit">Sort</button>
-      </form>
+      <div className="users-container">
+        {uglyData.map((user) => {
+          return <User key={user.id} user={user} />;
+        })}
+      </div>
+
+      <p className="rtt" onClick={rtt}>Return to Top</p>
     </div>
   );
 }

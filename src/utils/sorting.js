@@ -1,21 +1,40 @@
 export const sortByEmail = (arr) => {
     const newArr = [...arr];
-    const sorter = newArr.sort((a, b) => {
-        if(a.email === null || b.email === null) {
-            return -2;
-        }
-        
-        const emailA = a.email.split('@')[0];
-        const emailB = b.email.split('@')[0];
+    // const filter = newArr.filter((user) => {
+    //     return user.email !== null || user.email !== '' || user.email !== undefined;
+    // });
 
-        if(emailA < emailB) {
-            return -1;
-        } else if (emailA > emailB) {
-            return 1;
-        } else return 0;
+    const filtered = [];
+    const empty = [];
+    for(let i = 0; i < newArr.length; i++) {
+        if(newArr[i].email === null) {
+            empty.push(newArr[i]);
+        } else {
+            filtered.push(newArr[i]);
+        }
+    }
+
+    // console.log(filter);
+    // const empties = newArr.filter((user) => {
+    //     return user.email === null || user.email === '' || user.email === undefined;
+    // });
+    // console.log(empties);
+    const sorter = filtered.sort((a, b) => {
+        if(a.email !== null && b.email !== null) {
+            const emailA = a.email.split('@')[0] || null;
+            const emailB = b.email.split('@')[0] || null;
+
+            if(emailA < emailB) {
+                return -1;
+            } else if (emailA > emailB) {
+                return 1;
+            } else return 0;
+        }
     });
 
-    return sorter;
+    const returnVal = [...empty, ...sorter];
+
+    return returnVal;
 }
 
 export const sortByUsername = (arr) => {
@@ -27,8 +46,8 @@ export const sortByUsername = (arr) => {
             return -2;
         }
 
-        const strippedA = a.username.replace("\\d");
-        const strippedB = b.username.replace("\\d");
+        let strippedA = a.username;
+        let strippedB = b.username;
 
         if(strippedA < strippedB) {
             return -1;
@@ -84,16 +103,25 @@ export const sortByState = (arr) => {
     return sorter;
 }
 
-// need to fix up the extra logic for specific keys
 export const sortByKey = (arr, key) => {
-    const newArr = [...arr];
-    const sorter = newArr.sort((a, b) => {
-        if(a[key] < b[key]) {
-            return -1;
-        } else if (a[key] > b[key]) {
-            return 1;
-        } else return 0;
-    });
+    let returnVal;
+    switch(key) {
+        case 'email':
+            returnVal = sortByEmail(arr);
+            break;
+        case 'username':
+            returnVal = sortByUsername(arr);
+            break;
+        case 'lastName':
+            returnVal = sortByLastName(arr);
+            break;
+        case 'dob':
+            returnVal = sortByDOB(arr);
+            break;
+        case 'state':
+            returnVal = sortByState(arr);
+            break;
+    }
 
-    return sorter;
+    return returnVal;
 }
