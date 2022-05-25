@@ -90,6 +90,7 @@ export const sortByDOB = (arr) => {
 
 export const sortByState = (arr) => {
     const newArr = [...arr];
+    
     const sorter = newArr.sort((a, b) => {
         const stateA = a.profile.address.split(',')[2].trim();
         const stateB = b.profile.address.split(',')[2].trim();

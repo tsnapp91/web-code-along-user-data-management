@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  background-color: beige;
 	line-height: 1;
 }
 
@@ -63,7 +64,6 @@ table {
   flex-wrap: wrap;
   justify-content: flex;
   align-items: flex;
-  background-color: beige;
 }
 
 .container h1 {

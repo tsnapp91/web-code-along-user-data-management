@@ -10,17 +10,23 @@ import {
   // sortByDOB,
   // sortByState,
 } from "./utils/sorting";
+import { filterByNameEmail } from './utils/filtering';
 
 import User from "./components/User";
 
 import "./styles/App.css";
 
 function App() {
-  const [uglyData, setUglyData] = useState(_uglyData);
+  const [initialData] = useState(_uglyData);
+  const [uglyData, setUglyData] = useState(initialData);
   const [optionsState, setOptionsState] = useState("");
 
   const rtt = () => {
     document.documentElement.scrollTop = 0;
+  }
+
+  const resetData = () => {
+    setUglyData(initialData);
   }
 
   const keyCleaner = async (arr) => {
@@ -103,15 +109,23 @@ function App() {
     return newData;
   };
 
-  const handleSelectChange = (e) => {
+  const filterGeneric = () => {
+    const newData = filterByNameEmail(uglyData, optionsState);
+    setUglyData(newData);
+    return newData;
+  }
+
+  const handleChange = (e) => {
     e.preventDefault();
     setOptionsState(e.target.value);
+    return e.target.value;
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    sortGeneric(uglyData, optionsState);
-  };
+    const newData = filterGeneric();
+    return newData;
+  }
 
   return (
     <div className="container">
@@ -128,16 +142,21 @@ function App() {
         </button>
 
         <form onSubmit={onSubmit}>
-          <select value={optionsState} onChange={handleSelectChange}>
+          {/* <select value={optionsState} onChange={handleSelectChange}>
             <option value=""></option>
             <option value="email">email</option>
             <option value="username">username</option>
             <option value="lastName">last name</option>
             <option value="dob">date of birth</option>
             <option value="state">state</option>
-          </select>
-          <button type="submit">Sort</button>
+          </select> */}
+          <input onChange={handleChange} placeholder='type here!' />
+          <button type="submit">Search</button>
         </form>
+
+        <button onClick={() => resetData()}>
+          Reset data
+        </button>
       </div>
 {/* 
       <div className="button-container">

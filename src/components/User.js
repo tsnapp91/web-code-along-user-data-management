@@ -2,7 +2,6 @@ import React from "react";
 import '../styles/User.css';
 
 function User(props) {
-
   return (
     <div className="user-card">
       <div className="fields">
