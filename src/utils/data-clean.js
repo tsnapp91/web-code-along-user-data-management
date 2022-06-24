@@ -16,7 +16,6 @@ const hasCorrectFormat = (date) => {
     } else return false;
 }
 
-// IMPLEMENT IN 1.2 STEP 2
 export const cleanDates = async (arr) => {
     const returnArr = [];
     
@@ -106,9 +105,7 @@ export const cleanDates = async (arr) => {
     
     return returnArr;
 }
-// IMPLEMENT IN 1.2 STEP 2
 
-// IMPLEMENT IN 1.2 STEP 3
 export const cleanupUndefinedKeys = async (arr) => {
     const returnArr = [];
     
@@ -141,4 +138,3 @@ export const cleanupUndefinedKeys = async (arr) => {
 
     return returnArr;
 }
-// IMPLEMENT IN 1.2 STEP 3
