@@ -44,13 +44,11 @@ function App() {
     setField(e.target.value);
   }
 
-  // IMPLEMENT 2.1 STEP 2
   const search = async (e) => {
     e.preventDefault();
     const newData = await filter(uglyData, field, searchTerm);
     setUglyData(newData);
   }
-  // IMPLEMENT 2.1 STEP 2
 
   // IMPLEMENT 2.1 STEP 3
   const countUsers = (arr) => {
