@@ -65,15 +65,6 @@ export const sortByState = (arr) => {
   return sorter;
 };
 
-// IMPLEMENT IN 1.1 STEP 2
-// export const sortByEmail = (arr) => {
-//   const newArr = [...arr];
-
-//   return returnVal;
-// };
-// IMPLEMENT IN 1.1 STEP 2
-
-// IMPLEMENT IN 1.1 STEP 3
 export const sortByEmail = (arr) => {
   const newArr = [...arr];
 
@@ -104,9 +95,7 @@ export const sortByEmail = (arr) => {
 
   return returnVal;
 };
-// IMPLEMENT IN 1.1 STEP 3
 
-// IMPLEMENT IN 1.1 STEP 4
 export const sortByKey = (arr, key) => {
   let returnVal;
   switch (key) {
@@ -132,4 +121,3 @@ export const sortByKey = (arr, key) => {
 
   return returnVal;
 };
-// IMPLEMENT IN 1.1 STEP 4
