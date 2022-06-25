@@ -110,7 +110,7 @@ function App() {
         </button>
       </div>
 
-      <div>
+      <div id="user-count" className="button-container">
         <h2>Users: {userCount}</h2>
         <button onClick={() => countUsers(uglyData)}>Update</button>
       </div>
