@@ -8,6 +8,23 @@
 
 Tested on Node v16.14.0->LTS.
 
+## Navigation Between App Versions
+- Starter and Solution code are always available to learners for every Code-Along. You should always attempt to start with the starter code before looking up the answers; they are available to help if you are unable to resolve the solution yourself. Navigate through different Code-Along lessons through the Git branching structure. The following lessons are available on the following branches:
+    - 1.1-starter
+    - 1.1-solution
+    - 1.2-starter
+    - 1.2-solution
+    - 2.1-starter
+    - 2.1-solution
+    - 3.1-starter
+    - 3.1-solution
+    - 3.2-starter
+    - 3.2-solution
+
+- **Please note:** 2.2 Code-Along code is located in another repository. Please find the download link in your Canvas Course.
+
+- If you need assistance with Git branching and how to access another branch, please reference [this link](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) or utilize The Hub.
+
 
 # BELOW HERE is Further Info About Using React; not needed for code-along
 # Getting Started with Create React App
