@@ -1,3 +1,15 @@
+# web-code-along-user-data-management
+
+## Setup
+1. Clone the project
+2. cd into the directory
+3. run `npm install`
+4. run `npm start` to start the local dev server
+
+Tested on Node v16.14.0->LTS.
+
+
+# BELOW HERE is Further Info About Using React; not needed for code-along
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,14 +80,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-## Job Narrative
-
-You work at a small startup with many inexperienced developers being herded by one or two strong technical leaders. They are recent additions to the team and have been tasked with sorting out some of the worst technical debt issues before they become too problematic.
-
-One of the first things they mention is how irregular the data is. This makes it extremely difficult for the business team to make insights on customer behavior, but it also makes it difficulty to simply expand the features of your product; some users are missing required account data and sometimes the format is wrong. Some of this is fixable, but others will simply need to be reset and re-done by the user.
-
-You have been tasked with creating a script that can clean up birthdays; there was never a standardized method attached to the signup form, so four different formats are currently in use. You will also need to set any "undefined" values to null.
-
-Once this is complete, you will need to build a method to sort through the data using various keys, so the CEO can look through his customer list and be very happy with himself.
