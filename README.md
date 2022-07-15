@@ -1,4 +1,4 @@
-# web-code-along-user-data-management
+# web-code-along-user-data-management-main
 
 ## Setup
 1. Clone the project
@@ -10,16 +10,16 @@ Tested on Node v16.14.0->LTS.
 
 ## Navigation Between App Versions
 - Starter and Solution code are always available to learners for every Code-Along. You should always attempt to start with the starter code before looking up the answers; they are available to help if you are unable to resolve the solution yourself. Navigate through different Code-Along lessons through the Git branching structure. The following lessons are available on the following branches:
-    - 1.1-Intro-to-JavaScript-starter
-    - 1.1-Intro-to-JavaScript-solution
-    - 1.2-Arrays-and-Objects-starter
-    - 1.2-Arrays-and-Objects-solution
-    - 2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-starter
-    - 2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-solution
-    - 3.1-General-Styling-starter
-    - 3.1-General-Styling-solution
-    - 3.2-Advanced-Styling-Techniques-starter
-    - 3.2-Advanced-Styling-Techniques-solution
+    - [1.1-Intro-to-JavaScript-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.1-Intro-to-JavaScript-starter)
+    - [1.1-Intro-to-JavaScript-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.1-Intro-to-JavaScript-solution)
+    - [1.2-Arrays-and-Objects-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.2-Arrays-and-Objects-starter)
+    - [1.2-Arrays-and-Objects-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.2-Arrays-and-Objects-solution)
+    - [2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-starter)
+    - [2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/2.1-HOFs-CB-Functions-and-Advanced-Array-Methods-solution)
+    - [3.1-General-Styling-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/3.1-General-Styling-starter)
+    - [3.1-General-Styling-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/3.1-General-Styling-solution)
+    - [3.2-Advanced-Styling-Techniques-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/3.2-Advanced-Styling-Techniques-starter)
+    - [3.2-Advanced-Styling-Techniques-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/3.2-Advanced-Styling-Techniques-solution)
 
 - **Please note:** 2.2 Code-Along code is located in another repository. Please find the download link in your Canvas Course.
 
