@@ -1,4 +1,4 @@
-# web-code-along-user-data-management-main
+# Code-Along Project - User Data Management App - Information and Setup
 
 ## Setup
 1. Clone the project
