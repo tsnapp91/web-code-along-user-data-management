@@ -1,4 +1,4 @@
-# web-code-along-user-data-management-hofs-cb-functions-and-advanced-array-methods-solution
+# Code-Along 2.1 - Higher Order Functions, Callback Functions, and Advanced Array Methods - Solution
 
 ## Setup
 1. Clone the project
