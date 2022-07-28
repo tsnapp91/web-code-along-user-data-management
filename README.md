@@ -1,15 +1,18 @@
-# Code-Along 2.1 - Higher Order Functions, Callback Functions, and Advanced Array Methods - Solution
+# Code-Along Project - User Data Management App - Information and Setup
 
-## Setup
-1. Clone the project
-2. cd into the directory
-3. run `npm install`
-4. run `npm start` to start the local dev server
-
-Tested on Node v16.14.0->LTS.
+## Make sure you DID NOT FORK -- You will not have access to all of the code required for each Code-Along! If you forked, simply delete this clone and re-clone from the BloomTech URL.
 
 ## Navigation Between App Versions
-- Starter and Solution code are always available to learners for every Code-Along. You should always attempt to start with the starter code before looking up the answers; they are available to help if you are unable to resolve the solution yourself. Navigate through different Code-Along lessons through the Git branching structure. The following lessons are available on the following branches:
+- You will need to access the appropriate Git branch for the Code-Along you'd like to attend before installation. Starter and Solution code are always available to learners for every Code-Along. You should always attempt to start with the starter code before looking up the answers; they are available to help if you are unable to resolve the solution yourself.
+
+- In general, the following commands will suffice to access the code: 
+    1. `git pull --all`
+    2. `git checkout <branch>` (branches are given below)
+        ex: `git checkout 1.1-Intro-to-JavaScript-starter`
+
+-  If you need further assistance with Git, please reference Canvas, [this link](https://www.atlassian.com/git/tutorials/using-branches/git-checkout), or utilize The Help Hub.
+
+- The following lessons are available on the following branches:
     - [1.1-Intro-to-JavaScript-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.1-Intro-to-JavaScript-starter)
     - [1.1-Intro-to-JavaScript-solution](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.1-Intro-to-JavaScript-solution)
     - [1.2-Arrays-and-Objects-starter](https://github.com/bloominstituteoftechnology/web-code-along-user-data-management/tree/1.2-Arrays-and-Objects-starter)
@@ -23,8 +26,13 @@ Tested on Node v16.14.0->LTS.
 
 - **Please note:** 2.2 Code-Along code is located in another repository. Please find the download link in your Canvas Course.
 
-- If you need assistance with Git branching and how to access another branch, please reference [this link](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) or utilize The Hub.
+## Setup
+1. Clone the project
+2. cd into the directory
+3. run `npm install`
+4. run `npm start` to start the local dev server
 
+Tested on Node v16.14.0->LTS.
 
 # BELOW HERE is Further Info About Using React; not needed for code-along
 # Getting Started with Create React App
