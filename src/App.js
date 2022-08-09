@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import _uglyData from "./utils/uglify";
 import { sortByKey } from "./utils/sorting";
-import { cleanupUndefinedKeys, cleanDates } from './utils/data-clean';
+import { cleanUndefinedKeys, cleanDates } from './utils/data-clean';
 import { filter } from "./utils/filtering";
 import User from "./components/User";
 import "./styles/App.css";
@@ -26,15 +26,12 @@ function App() {
     setUglyData(newData);
   };
 
-  const dateCleaner = async (arr) => {
-    const newData = await cleanDates(arr);
-    setUglyData(newData);
-  };
-
-  const keyCleaner = async (arr) => {
-    const newData = await cleanupUndefinedKeys(arr);
-    setUglyData(newData);
-  };
+  const cleanData = async (arr) => {
+    const newData1 = await cleanUndefinedKeys(arr);
+    const newData2 = await cleanDates(newData1);
+    setUglyData(newData2);
+    return newData2;
+  }
 
   const searchTermSetter = (e) => {
     setSearchTerm(e.target.value);
@@ -46,11 +43,10 @@ function App() {
 
   const search = async (e) => {
     e.preventDefault();
-    const newData = await filter(uglyData, field, searchTerm);
+    const newData = await filter(initialData, field, searchTerm);
     setUglyData(newData);
   }
 
-  // IMPLEMENT 2.1 STEP 3
   const countUsers = (arr) => {
     const reduce = arr.reduce((accumulator) => {
       return accumulator += 1;
@@ -59,20 +55,17 @@ function App() {
     setUserCount(reduce);
     return reduce;
   }
-  // IMPLEMENT 2.1 STEP 3
 
   return (
     <div className="container">
       <h1>List of Users</h1>
 
       <div className="button-container">
-        <button onClick={() => dateCleaner([...uglyData])}>
-          Fix date values
+        <button onClick={() => cleanData([...uglyData])}>
+          Clean data
         </button>
 
-        <button onClick={() => keyCleaner([...uglyData])}>
-          Clean unformatted string values
-        </button>
+        <button onClick={() => resetData()}>Reset data</button>
 
         <form onSubmit={search}>
           <input name="searchTerm" type="text" onChange={searchTermSetter} placeholder="Search..." />
@@ -88,8 +81,6 @@ function App() {
           
           <button type="submit">Submit</button>
         </form>
-
-        <button onClick={() => resetData()}>Reset data</button>
       </div>
 
       <div className="button-container">
@@ -115,13 +106,11 @@ function App() {
         <button onClick={() => countUsers(uglyData)}>Update</button>
       </div>
 
-      {/* IMPLEMENT 2.1 STEP 1 */}
       <div className="users-container">
         {uglyData.map((user) => {
           return <User key={user.id} user={user} />;
         })}
       </div>
-      {/* IMPLEMENT 2.1 STEP 1 */}
 
       <p className="rtt" onClick={rtt}>
         Return to Top
